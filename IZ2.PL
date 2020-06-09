@@ -8,7 +8,7 @@ check(El,[_|T],Ref,Res):-check(El,T,Ref,Res).%Если элемент в гол�
 count_el(El,List,Count):-count_el(El,List,Count,0).
 count_el(_,[],Count,Count):-!.
 count_el(El,[El|T],Count,Iter):-Iter1 is Iter+1, count_el(El,T,Count,Iter1),!.
-count_el(El,[_|T],Count,Cur):-count_el(El,T,Count,Cur).
+count_el(El,[_|T],Count,Iter):-count_el(El,T,Count,Iter).
 
 writeList([]):-!.
 writeList([H|T]):-write(H),write(" "),writeList(T).
