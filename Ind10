@@ -1,0 +1,53 @@
+Вариант № 7.
+1.  Применяя две стратегии для редукции термов, привести заданный терм к нормальной форме, или показать, что это невозможно.
+a. Аппликативный порядок: (λx.(λy. x x y)u) ((λz. z z)u) = ((λx.xxu)( λz.zz)u)=( λx.xxu)(uu)=uuuuu
+Нормальный порядок: (λx.(λy. x x y)u) ((λz. z z)u) = 
+(λy. ((λz. z z)u) ((λz. z z)u) y) u = (λz. z z) u (λz. z z) u u = u u (λz. z z) u u = u u u u u
+
+b. Аппликативный порядок: (λxyz.(λu.xuy) (λu.xuz)) (λx.x)=
+(λxyz.(x(λu.xuz)y)) (λx.x)
+Нормальный порядок: невозможен из-за нехватки переменных
+
+2.Привести заданный комбинатор к нормальной форме.
+a. BS
+B зависит от 3 переменных а у нас только 1
+
+b. SBCWKII=BW(CW)KII=W((CW)K)II=CWKIII=WIKII=IKKII=KKII=KI
+
+c. C I (SB) (SB(KI)) (SB (SB(KI)))=I (SB(KI)) (SB) (SB (SB(KI)))= S B (KI) (SB) (SB (SB(KI)))=B (SB) ((KI)(SB)) (SB (SB(KI)))= S B (((KI)(SB)) (SB (SB(KI))))
+
+
+
+3. Провести редукцию и проверить правильность
+a. Add 4 2 = ((λmnfx. nf(mfx)) 4) 2 = 
+((λmnfx. nf(mfx)) (λfx. f(f(f(f(x))))) ) 2 = 
+(λnfx. n f ((λfx. f(f(f(f(x))))) f x))  (λfx. f(f(x))) = 
+(λfx. (λfx. f(f(x))) f ((λfx. f(f(f(f(x))))) f x))  = 
+(λfx. (λx. f(f(x))) ((λfx. f(f(f(f(x))))) f x))  = 
+(λfx. f(f(((λfx. f(f(f(f(x))))) f x)))) =
+(λfx. f(f(((λx. f(f(f(f(x))))) x)))) =
+(λfx. f(f(f(f(f(f(x))))))) = 6
+
+b. Inc 3 = (λnfx. f(nfx)) 3 = 
+(λnfx. f(nfx)) (λfx. f(f(f(x)))) = 
+(λfx. f((λfx. f(f(f(x)))) f x )) = 
+(λfx. f((λx. f(f(f(x)))) x )) = 
+(λfx. f(f(f(f(x))))) =  4
+
+
+d.  Mult 4 3 = ((λmnf. m(nf)) 4) 3 = 
+((λmnf. m(nf)) (λfx. f(f(f(f(x)))))) 3 =
+(λnf. (λfx. f(f(f(f(x))))) (nf)) (λfx. f(f(f(x)))) =
+(λf. (λfx. f(f(f(f(x))))) ((λfx. f(f(f(x))))f)) =
+(λf. (λx. ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) (x)))))) =
+(λf. (λx. (λx. f(f(f(x)))) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) (x)))))) =
+(λf. (λx. f(f(f( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) (x)))))))) =
+(λf. (λx. f(f(f( (λx. f(f(f(x)))) ( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) (x)))))))) =
+(λf. (λx. f(f(f(f(f(f( ((λfx. f(f(f(x))))f) ( ((λfx. f(f(f(x))))f) (x)))))))))) =
+(λf. (λx. f(f(f(f(f(f( (λx. f(f(f(x)))) ( ((λfx. f(f(f(x))))f) (x)))))))))) =
+(λf. (λx. f(f(f(f(f(f(f(f(f( ((λfx. f(f(f(x))))f) (x)))))))))))) =
+(λf. (λx. f(f(f(f(f(f(f(f(f( (λx. f(f(f(x)))) (x)))))))))))) =
+(λf. (λx. f(f(f(f(f(f(f(f(f(f(f(f(x)))))))))))))) =
+(λfx. f(f(f(f(f(f(f(f(f(f(f(f(x))))))))))))) = 12
+
+
