@@ -1,0 +1,36 @@
+open System
+open System.Windows.Forms
+
+
+
+
+
+let form = new Form(Width= 400, Height = 200, Text = "F#  Главная форма")
+form.Visible<-true
+
+let F1 = new CheckBox(Text="1 Флаг", Top=20, Left=20)
+let F2= new CheckBox(Text="2 Флаг", Top=20, Left=300)
+let button = new Button(Text="Проверить Флаги", Left=100, Top=120, Width=150)
+form.Controls.Add(F1)
+form.Controls.Add(F2)
+form.Controls.Add(button)
+let textbox = new TextBox(Top=80, Left=10, Width=360, Text="")
+form.Controls.Add(textbox)
+let buttonclick _ = 
+    if (F1.Checked=true && F2.Checked=false) then
+        textbox.Text<-"Поставлен 1 Флаг"
+    if (F1.Checked=false && F2.Checked=true) then
+        textbox.Text<-"Поставлен 2 Флаг"
+    if (F1.Checked=true && F2.Checked=true) then
+        textbox.Text<-"Поставлены оба Флага"
+    if (F1.Checked=false && F2.Checked=false) then
+        textbox.Text<-"Флаги не установлены"
+        form.Controls.Remove(textbox)
+        form.Controls.Add(textbox)
+        |> ignore
+
+let _ = button.Click.Add(buttonclick)
+[<EntryPoint>]
+let main argv =
+    do Application.Run(form)
+    0 // return an integer exit code
