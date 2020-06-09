@@ -23,3 +23,25 @@ main:-Teacher=[_,_,_],
     not(in_list(Teacher,[_,angl,matem])),
     not(in_list(Teacher,[_,biolog,franch])),
     not(in_list(Teacher,[_,franch,biolog])),
+    
+    (in_list(Teacher,[_,history,_]);in_list(Teacher,[_,_,history])),
+   (in_list(Teacher,[_,matem,_]);in_list(Teacher,[_,_,matem])),
+   (in_list(Teacher,[_,angl,_]);in_list(Teacher,[_,_,angl])),
+   (in_list(Teacher,[_,biolog,_]);in_list(Teacher,[_,_,biolog])),
+   (in_list(Teacher,[_,geograf,_]);in_list(Teacher,[_,_,geograf])),
+   (in_list(Teacher,[_,franch,_]);in_list(Teacher,[_,_,franch])),
+   
+   in_list(Teacher,[morozov,RObject1,Object1]),
+    write(morozov),write(": "),
+    write(FirstObject1),write(", "),
+    write(SecondObject1),nl,
+
+    in_list(Teacher,[vasilev,RObject2,Object2]),
+    write(vasilev),write(": "),
+    write(FirstObject2),write(", "),
+    write(SecondObject2),nl,
+
+    in_list(Teacher,[tokarev,RObject3,RObject3]),
+    write(tokarev),write(": "),
+    write(FirstObject3),write(", "),
+    write(SecondObject3),!.
