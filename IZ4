@@ -31,17 +31,18 @@ main:-Teacher=[_,_,_],
    (in_list(Teacher,[_,geograf,_]);in_list(Teacher,[_,_,geograf])),
    (in_list(Teacher,[_,franch,_]);in_list(Teacher,[_,_,franch])),
 
-   in_list(Teacher,[morozov,RObject1,Object1]),
+write(Teacher),nl,!,
+    in_list(Teacher,[Morozov,FirstObject1,SecondObject1]),
     write(morozov),write(": "),
-    write(RObject1),write(", "),
-    write(Object1),nl,
+    write(FirstObject1),write(", "),
+    write(SecondObject1),nl,
 
-    in_list(Teacher,[vasilev,RObject2,Object2]),
-    write(Vasilev),write(": "),
-    write(RObject2),write(", "),
-    write(Object2),nl,
+    in_list(Teacher,[Vasilev,FirstObject2,SecondObject2]),
+    write(vasilev),write(": "),
+    write(FirstObject2),write(", "),
+    write(SecondObject2),nl,
 
-    in_list(Teacher,[tokarev,RObject3,Object3]),
+    in_list(Teacher,[Tokarev,FirstObject3,SecondObject3]),
     write(tokarev),write(": "),
-    write(RObject3),write(", "),
-    write(Object3),!.
+    write(FirstObject3),write(", "),
+    write(SecondObject3),!.
