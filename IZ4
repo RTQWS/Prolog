@@ -1,0 +1,21 @@
+in_list([El|_],El).
+in_list([_|T],El):-in_list(T,El).
+main:-Teacher=[_,_,_],
+             in_list(Teacher,[morozov,_,_]),
+             in_list(Teacher,[vasilev,_,_]),
+             in_list(Teacher,[tokarev,_,_]),
+
+    not(in_list(Teacher,[_,biolog,matem])),
+    not(in_list(Teacher,[_,matem,biolog])),
+    not(in_list(Teacher,[morozov,biolog,_])),
+    not(in_list(Teacher,[morozov,_,biolog])),
+    not(in_list(Teacher,[_,geograf,franch])),
+    not(in_list(Teacher,[_,franch,geograf])),
+    not(in_list(Teacher,[tokarev,biolog,_])),
+    not(in_list(Teacher,[tokarev,_,biolog])),
+    not(in_list(Teacher,[tokarev,franch,_])),
+    not(in_list(Teacher,[tokarev,_,franch])),
+    not(in_list(Teacher,[morozov,matem,_])),
+    not(in_list(Teacher,[morozov,_,matem])),
+    not(in_list(Teacher,[morozov,angl,_])),
+    not(in_list(Teacher,[morozov,_,angl])),
