@@ -1,0 +1,13 @@
+  
+let delit a b =
+    if (a%b=0) then false
+    else true
+
+let rec prost a b =
+    if a = b then true
+    else (delit a b) && (prost a (b+1))
+
+let pr a =
+    match a with
+    | 1 -> false
+    | _ -> prost a 2
